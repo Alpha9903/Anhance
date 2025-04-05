@@ -1,0 +1,378 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ff4500;
+}
+
+.preview-publish {
+    display: flex;
+    gap: 10px;
+}
+
+.preview-btn, .publish-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.preview-btn {
+    background-color: #e0e0e0;
+}
+
+.publish-btn {
+    background-color: #6a0dad;
+    color: #fff;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    background: linear-gradient(to right, #f5f5f5, #d3d3d3);
+}
+
+.hero-content {
+    width: 50%; /* Ensure the text takes up 50% of the space */
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    color: #1a1a1a;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.cta-btn {
+    padding: 15px 30px;
+    background-color: #ff4500;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.hero-image {
+    width: 50%; /* Ensure the image takes up 50% of the space */
+    display: flex;
+    justify-content: center;
+}
+
+.hero-image img {
+    max-width: 80%; /* Reduce the image size to fit better within the 50% width */
+    height: auto;
+}
+
+/* Features Section */
+.features {
+    padding: 50px;
+    text-align: center;
+}
+
+.features h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.features p {
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+.feature-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: left;
+}
+
+.card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 16px;
+    color: #666;
+}
+
+/* Projects Section */
+.projects {
+    padding: 50px;
+    background-color: #ff4500;
+    color: #fff;
+    text-align: center;
+}
+
+.projects h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.project-cards {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: stretch; /* Ensure all cards stretch to the same height */
+}
+
+.project-card {
+    background-color: #fff;
+    color: #1a1a1a;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    height: 500px; /* Set a fixed height for all cards */
+}
+
+.project-card img {
+    max-width: 100%;
+    height: 150px; /* Fixed height for images to ensure consistency */
+    object-fit: cover; /* Ensure images scale properly */
+    border-radius: 10px;
+}
+
+.project-card h3 {
+    font-size: 20px;
+    margin: 20px 0 10px;
+}
+
+.project-card p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+    flex-grow: 1; /* Allow the paragraph to grow and fill space */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 5; /* Limit the text to 5 lines */
+    -webkit-box-orient: vertical;
+}
+
+.explore-btn {
+    padding: 10px 20px;
+    background-color: #ff4500;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: auto; /* Push the button to the bottom */
+}
+
+/* Contact Section */
+.contact {
+    padding: 50px;
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.contact p {
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+.contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact input, .contact textarea {
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.contact textarea {
+    height: 150px;
+    resize: none;
+}
+
+.submit-btn {
+    padding: 15px;
+    background-color: #ff4500;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.recaptcha {
+    font-size: 14px;
+    color: #666;
+    margin-top: 20px;
+}
+
+/* Footer */
+footer {
+    padding: 20px;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+    font-size: 16px;
+    color: #333;
+}
+
+/* Animation Styles */
+.fade-in, .slide-in-left, .slide-in-right, .scale-up {
+    opacity: 0;
+    transition: all 0.8s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+}
+
+.slide-in-left {
+    transform: translateX(-50px);
+}
+
+.slide-in-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.slide-in-right {
+    transform: translateX(50px);
+}
+
+.slide-in-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.scale-up {
+    transform: scale(0.8);
+}
+
+.scale-up.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Hero Section Animations */
+.hero-content h1, .hero-content p, .hero-content .cta-btn {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease-out;
+}
+
+.hero-content h1.visible, .hero-content p.visible, .hero-content .cta-btn.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hero-content h1 {
+    transition-delay: 0.2s;
+}
+
+.hero-content p {
+    transition-delay: 0.4s;
+}
+
+.hero-content .cta-btn {
+    transition-delay: 0.6s;
+}
+
+/* Feature Cards Animation */
+.feature-cards .card {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease-out;
+}
+
+.feature-cards .card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.feature-cards .card:nth-child(1) { transition-delay: 0.1s; }
+.feature-cards .card:nth-child(2) { transition-delay: 0.2s; }
+.feature-cards .card:nth-child(3) { transition-delay: 0.3s; }
+.feature-cards .card:nth-child(4) { transition-delay: 0.4s; }
+.feature-cards .card:nth-child(5) { transition-delay: 0.5s; }
+
+/* Project Cards Animation */
+.project-cards .project-card {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease-out;
+}
+
+.project-cards .project-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.project-cards .project-card:nth-child(1) { transition-delay: 0.1s; }
+.project-cards .project-card:nth-child(2) { transition-delay: 0.2s; }
+.project-cards .project-card:nth-child(3) { transition-delay: 0.3s; }
+
+/* Contact Form Animation */
+.contact form input, .contact form textarea, .contact form .submit-btn {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease-out;
+}
+
+.contact form input.visible, .contact form textarea.visible, .contact form .submit-btn.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.contact form input:nth-child(1) { transition-delay: 0.1s; }
+.contact form input:nth-child(2) { transition-delay: 0.2s; }
+.contact form textarea { transition-delay: 0.3s; }
+.contact form .submit-btn { transition-delay: 0.4s; }
