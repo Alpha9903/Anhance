@@ -8,19 +8,25 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // PostgreSQL config
+const { Pool } = require('pg');
 const pool = new Pool({
-  host: process.env.PG_HOST,
-  port: 5432, // PostgreSQL default port
-  user: process.env.PG_USER,
-  password: process.env.PG_PASSWORD,
-  database: process.env.PG_DATABASE,
+  host: process.env.DB_HOST,
+  port: process.env.DB_PORT,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_DATABASE,
+  ssl: { rejectUnauthorized: false }, // Render ke liye zaroori
 });
 
-// Test connection
-pool.connect()
-  .then(() => console.log('✅ Connected to PostgreSQL'))
-  .catch(err => console.error('❌ PostgreSQL connection failed:', err));
-
+// Test Connection
+pool.connect((err, client, release) => {
+  if (err) {
+    console.error('❌ PostgreSQL connection failed:', err.stack);
+  } else {
+    console.log('✅ Connected to PostgreSQL');
+    release();
+  }
+});
 // Voiceflow webhook handler
 app.post('/webhook', async (req, res) => {
   const { user_id, intent, message } = req.body;
