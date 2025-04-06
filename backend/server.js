@@ -37,15 +37,27 @@ app.post('/webhook', async (req, res) => {
   let table = '';
   const intentLower = intent?.toLowerCase() || '';
 
-  if (intentLower === 'appointment') {
-    table = 'appointments';
-  } else if (intentLower === 'order') {
-    table = 'order_tracking';
-  } else if (intentLower === 'ticket') {
-    table = 'tickets';
+  if (intent === "ticket") {
+    const query = `INSERT INTO tickets (user_id, intent, message) VALUES ($1, $2, $3) RETURNING id`;
+    const result = await pool.query(query, [user_id, intent, message]);
+    return res.status(200).json({ status: "Saved in tickets", id: result.rows[0].id });
+  
+  } else if (intent === "appointment") {
+    const query = `INSERT INTO appointments (user_id, intent, message) VALUES ($1, $2, $3) RETURNING id`;
+    const result = await pool.query(query, [user_id, intent, message]);
+    return res.status(200).json({ status: "Saved in appointments", id: result.rows[0].id });
+  
+  } else if (intent === "order_tracking") {
+    const { order_id, status, expected_delivery } = req.body;
+    const query = `INSERT INTO order_tracking (user_id, intent, message, order_id, status, expected_delivery)
+                   VALUES ($1, $2, $3, $4, $5, $6) RETURNING id`;
+    const result = await pool.query(query, [user_id, intent, message, order_id, status, expected_delivery]);
+    return res.status(200).json({ status: "Saved in order_tracking", id: result.rows[0].id });
+  
   } else {
     return res.status(400).json({ status: "Invalid intent" });
   }
+  
 
   const query = `INSERT INTO ${table} (user_id, intent, message) VALUES ($1, $2, $3) RETURNING id`;
 
