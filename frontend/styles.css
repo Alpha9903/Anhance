@@ -283,6 +283,80 @@ footer p {
     color: #333;
 }
 
+/* Subscription Section */
+.subscription {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #fff;
+}
+
+.subscription h2 {
+    font-size: 36px;
+    color: #1a1a1a;
+    margin-bottom: 40px;
+}
+
+.pricing {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.plan {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: left;
+    transition: transform 0.3s ease;
+}
+
+.plan:hover {
+    transform: translateY(-5px);
+}
+
+.plan h3 {
+    font-size: 24px;
+    color: #ff4500;
+    margin-bottom: 10px;
+}
+
+.plan p {
+    font-size: 20px;
+    color: #e04e1e;
+    margin-bottom: 20px;
+}
+
+.plan ul {
+    list-style: none;
+    padding: 0;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.plan ul li {
+    margin: 10px 0;
+}
+
+.subscribe-btn {
+    padding: 12px 25px;
+    background-color: #ff4500;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.subscribe-btn:hover {
+    background-color: #e04e1e;
+}
+
 /* Animation Styles */
 .fade-in, .slide-in-left, .slide-in-right, .scale-up {
     opacity: 0;
@@ -395,6 +469,22 @@ footer p {
 .contact form textarea { transition-delay: 0.3s; }
 .contact form .submit-btn { transition-delay: 0.4s; }
 
+/* Subscription Animation */
+.plan {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease-out;
+}
+
+.plan.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.plan:nth-child(1) { transition-delay: 0.1s; }
+.plan:nth-child(2) { transition-delay: 0.2s; }
+.plan:nth-child(3) { transition-delay: 0.3s; }
+
 /* Responsive Design */
 @media (max-width: 768px) {
     header {
@@ -431,7 +521,7 @@ footer p {
         flex-direction: column;
         padding: 30px 15px;
         text-align: center;
-        min-height: 400px; /* Ensure enough space for background */
+        min-height: 400px;
         background-image: url('../assets/What_is_Generative_AI_63beafff52.webp');
         background-size: cover;
         background-position: center;
@@ -443,21 +533,21 @@ footer p {
     }
 
     .hero-image {
-        display: none; /* Hide the image element on mobile */
+        display: none;
     }
 
     .hero-content h1 {
         font-size: 32px;
-        color: #fff; /* White text for contrast against background */
+        color: #fff;
     }
 
     .hero-content p {
         font-size: 16px;
-        color: #fff; /* White text for contrast */
+        color: #fff;
     }
 
     .cta-btn {
-        background-color: #fff; /* White button for contrast */
+        background-color: #fff;
         color: #ff4500;
     }
 
@@ -495,6 +585,15 @@ footer p {
 
     .contact input, .contact textarea {
         font-size: 14px;
+    }
+
+    .subscription {
+        padding: 30px 15px;
+    }
+
+    .plan {
+        width: 100%;
+        max-width: 300px;
     }
 
     footer {
