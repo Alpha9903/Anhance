@@ -1,14 +1,13 @@
 const express = require('express');
 const path = require('path');
 const app = express();
-const { Pool } = require('pg'); // PostgreSQL client
+const { Pool } = require('pg'); // PostgreSQL client - Sirf ek baar declare
 const port = process.env.PORT || 3000;
 
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // PostgreSQL config
-const { Pool } = require('pg');
 const pool = new Pool({
   host: process.env.DB_HOST,
   port: process.env.DB_PORT,
@@ -27,6 +26,7 @@ pool.connect((err, client, release) => {
     release();
   }
 });
+
 // Voiceflow webhook handler
 app.post('/webhook', async (req, res) => {
   const { user_id, intent, message } = req.body;
