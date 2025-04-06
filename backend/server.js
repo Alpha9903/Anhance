@@ -40,7 +40,7 @@ app.post('/webhook', async (req, res) => {
   if (intentLower === 'appointment') {
     table = 'appointments';
   } else if (intentLower === 'order') {
-    table = 'orders';
+    table = 'order_tracking';
   } else if (intentLower === 'ticket') {
     table = 'tickets';
   } else {
