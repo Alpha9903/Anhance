@@ -35,7 +35,14 @@ app.post('/webhook', async (req, res) => {
   console.log("Intent:", intent);
   console.log("Message:", message);
 
-  const query = `INSERT INTO tickets (user_id, intent, message) VALUES ($1, $2, $3) RETURNING id`;
+  let table = "tickets";
+if (intent.toLowerCase() === "appointment") {
+  table = "appointments";
+} else if (intent.toLowerCase() === "order") {
+  table = "orders";
+}
+const query = `INSERT INTO ${table} (user_id, intent, message) VALUES ($1, $2, $3) RETURNING id`;
+
   try {
     const result = await pool.query(query, [user_id, intent, message]);
     res.status(200).json({ status: "Saved", id: result.rows[0].id });
