@@ -26,6 +26,42 @@ header {
     color: #ff4500;
 }
 
+/* Navigation Menu */
+.nav-menu {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #ff4500;
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: #e04e1e;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #ff4500;
+}
+
 /* Hero Section */
 .hero {
     display: flex;
@@ -61,155 +97,16 @@ header {
     cursor: pointer;
 }
 
-.hero-image {
+.hero-image.slide-in-right {
     width: 50%;
     display: flex;
     justify-content: center;
 }
 
-.hero-image img {
+.hero-image.slide-in-right img {
     max-width: 80%;
     height: auto;
 }
-
-/* ... (previous CSS remains the same until nav-menu) ... */
-
-/* Navigation Menu */
-.nav-menu {
-    display: flex;
-    align-items: center;
-    width: 100%; /* Ensure it takes full width of header */
-}
-
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 30px; /* Increase gap between links for spreadout effect */
-    margin: 0 auto; /* Center the navigation links */
-    padding: 0;
-}
-
-.nav-links li a {
-    text-decoration: none;
-    color: #ff4500;
-    font-weight: bold;
-    font-size: 16px;
-    transition: color 0.3s ease; /* Smooth hover effect */
-}
-
-.nav-links li a:hover {
-    color: #e04e1e; /* Slightly darker orange on hover */
-}
-
-.menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-    color: #ff4500;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        text-align: center;
-        padding: 15px;
-    }
-
-    .nav-menu {
-        width: 100%;
-        margin-top: 10px;
-    }
-
-    .menu-toggle {
-        display: block;
-    }
-
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        text-align: center;
-    }
-
-    .nav-links.active {
-        display: flex;
-    }
-
-    .nav-links li {
-        margin: 10px 0;
-    }
-
-    .hero {
-        flex-direction: column;
-        padding: 30px 15px;
-        text-align: center;
-    }
-
-    .hero-content, .hero-image {
-        width: 100%;
-    }
-
-    .hero-content h1 {
-        font-size: 32px;
-    }
-
-    .hero-content p {
-        font-size: 16px;
-    }
-
-    .hero-image img {
-        max-width: 100%;
-    }
-
-    .features {
-        padding: 30px 15px;
-    }
-
-    .card {
-        width: 100%;
-        max-width: 300px;
-    }
-
-    .projects {
-        padding: 30px 15px;
-    }
-
-    .project-cards {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .project-card {
-        width: 100%;
-        max-width: 300px;
-        height: auto;
-    }
-
-    .contact {
-        padding: 30px 15px;
-    }
-
-    .contact form {
-        max-width: 100%;
-    }
-
-    .contact input, .contact textarea {
-        font-size: 14px;
-    }
-
-    footer {
-        padding: 15px;
-    }
-
-    footer p {
-        font-size: 14px;
-    }
-}
-
-/* JavaScript will toggle this class */
 
 /* Features Section */
 .features {
@@ -502,6 +399,30 @@ footer p {
         flex-direction: column;
         text-align: center;
         padding: 15px;
+    }
+
+    .nav-menu {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
     }
 
     .hero {
