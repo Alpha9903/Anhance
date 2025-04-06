@@ -69,10 +69,12 @@ header {
     align-items: center;
     padding: 50px 20px;
     background: linear-gradient(to right, #f5f5f5, #d3d3d3);
+    position: relative;
 }
 
 .hero-content {
     width: 50%;
+    z-index: 1; /* Ensure content stays above background */
 }
 
 .hero-content h1 {
@@ -429,22 +431,34 @@ footer p {
         flex-direction: column;
         padding: 30px 15px;
         text-align: center;
+        min-height: 400px; /* Ensure enough space for background */
+        background-image: url('../assets/What_is_Generative_AI_63beafff52.webp');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
     }
 
     .hero-content, .hero-image {
         width: 100%;
     }
 
+    .hero-image {
+        display: none; /* Hide the image element on mobile */
+    }
+
     .hero-content h1 {
         font-size: 32px;
+        color: #fff; /* White text for contrast against background */
     }
 
     .hero-content p {
         font-size: 16px;
+        color: #fff; /* White text for contrast */
     }
 
-    .hero-image img {
-        max-width: 100%;
+    .cta-btn {
+        background-color: #fff; /* White button for contrast */
+        color: #ff4500;
     }
 
     .features {

@@ -35,3 +35,11 @@ const contactFormElements = document.querySelectorAll('.contact form input, .con
 [...fadeInElements, ...slideInLeftElements, ...slideInRightElements, ...scaleUpElements, ...featureCards, ...projectCards, ...contactFormElements].forEach(element => {
     observer.observe(element);
 });
+
+// Navigation menu toggle
+const menuToggle = document.querySelector('.menu-toggle');
+const navLinks = document.querySelector('.nav-links');
+
+menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+});
