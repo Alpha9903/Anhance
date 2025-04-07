@@ -45,6 +45,16 @@ app.post('/webhook', async (req, res) => {
       const query = `INSERT INTO appointments (user_id, intent, message) VALUES ($1, $2, $3) RETURNING id`;
       const result = await pool.query(query, [user_id, intent, message]);
       return res.status(200).json({ status: "Saved in appointments", id: result.rows[0].id });
+      const existing = await pool.query(
+        'SELECT * FROM appointments WHERE user_id = $1 AND intent = $2 AND created_at::date = CURRENT_DATE',
+        [user_id, intent]
+      );
+      if (existing.rows.length === 0) {
+        // Insert
+      } else {
+        console.log("Duplicate appointment ignored");
+      }
+      
 
     // Handling the order_tracking intent
     } else if (intent === "order_tracking") {
